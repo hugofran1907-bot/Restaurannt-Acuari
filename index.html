@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Bar Restaurant Acuari - Cambrils</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#426087",
+                        "surface-container-highest": "#e9e1dc",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#87a4cf",
+                        "on-background": "#1e1b18",
+                        "inverse-surface": "#34302c",
+                        "surface-container-low": "#fbf2ed",
+                        "primary-container": "#1a3a5f",
+                        "background": "#fff8f5",
+                        "secondary-fixed-dim": "#d7c3b0",
+                        "secondary-fixed": "#f4dfcb",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#716252",
+                        "on-primary-fixed-variant": "#2a486e",
+                        "on-surface-variant": "#43474e",
+                        "primary": "#002446",
+                        "on-tertiary-container": "#a3a29e",
+                        "surface": "#fff8f5",
+                        "on-secondary-fixed-variant": "#524436",
+                        "surface-container-high": "#efe6e2",
+                        "on-error": "#ffffff",
+                        "secondary": "#6b5c4c",
+                        "tertiary-container": "#393936",
+                        "error": "#ba1a1a",
+                        "surface-container": "#f5ece7",
+                        "on-secondary-fixed": "#241a0e",
+                        "secondary-container": "#f4dfcb",
+                        "outline-variant": "#c3c6cf",
+                        "surface-variant": "#e9e1dc",
+                        "surface-bright": "#fff8f5",
+                        "on-surface": "#1e1b18",
+                        "primary-fixed-dim": "#abc8f5",
+                        "tertiary-fixed": "#e4e2dd",
+                        "primary-fixed": "#d3e3ff",
+                        "inverse-primary": "#abc8f5",
+                        "surface-dim": "#e1d8d4",
+                        "tertiary": "#232421",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#474744",
+                        "on-tertiary-fixed": "#1b1c19",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001c39",
+                        "outline": "#73777f",
+                        "inverse-on-surface": "#f8efea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1120px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "content-gap": "32px",
+                        "margin-mobile": "20px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Work Sans"],
+                        "headline-sm": ["Libre Caslon Text"],
+                        "body-md": ["Work Sans"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "body-lg": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto left-0 right-0 bg-surface/95 dark:bg-surface/95 backdrop-blur-md border-b border-secondary dark:border-secondary-fixed-dim/20 transition-all">
+        <a class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed tracking-tight hover:opacity-80 transition-opacity duration-300" href="#inicio">
+            BAR RESTAURANT ACUARI
+        </a>
+        <nav class="hidden md:flex gap-6 font-label-caps text-label-caps items-center">
+            <a class="text-primary dark:text-primary-fixed border-b-2 border-primary pb-1 opacity-100 transition-all font-bold" href="#inicio">INICIO</a>
+            <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary hover:opacity-80 transition-opacity duration-300" href="#menu">MENÚ</a>
+            <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary hover:opacity-80 transition-opacity duration-300" href="#contacto">CONTACTO</a>
+        </nav>
+        <button class="md:hidden text-primary" onclick="toggleMobileMenu()">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    </header>
+
+    <main class="flex-grow pt-20">
+        <!-- Hero Section -->
+        <section id="inicio" class="pt-section-gap pb-section-gap bg-surface-container-low max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-content-gap items-center">
+                <div class="space-y-6 order-2 md:order-1">
+                    <h3 class="font-label-caps text-label-caps text-secondary tracking-widest uppercase">Bienvenidos a</h3>
+                    <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary">
+                        Bar Restaurant Acuari
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        Disfruta de la gastronomía costera más auténtica en el corazón de Cambrils. Pescados y mariscos frescos, recetas tradicionales y un ambiente inmejorable junto al mar.
+                    </p>
+                    <a class="inline-flex items-center gap-2 text-primary font-label-caps text-label-caps mt-4 border-b border-primary pb-1 hover:text-secondary hover:border-secondary transition-colors" href="#menu">
+                        VER EL MENÚ
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="relative h-[400px] md:h-[600px] order-1 md:order-2 rounded-DEFAULT overflow-hidden border border-secondary/20">
+                    <img class="w-full h-full object-cover" alt="Tapas españolas en Bar Restaurant Acuari" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv0B1h3TyoRyH5Q4R9lPRj8w4RI43VlZnSTKhfbnaoWNGfbeeWl4HC2YrYG2BoB2yphHBA3SMGLW73gXuBSfFGSa2nGJFzzq10p2p-pI8b1lDpfPQtuPCycUqH6GmSG_rK-vYCkx7GeyiwMB7wq7RU3NbPyJp8c6tUlSTdnPqRdViIwOI4RLPIGymYThIGF0VCCq6gMKlyvUzu4g_CRi3xyhdwZZuiYyyaDqdabhjSFie4BGW4fDjXTw">
+                </div>
+            </div>
+        </section>
+
+        <!-- Nuestra Cocina Section -->
+        <section class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-content-gap items-center">
+                <div class="relative h-[400px] md:h-[600px] rounded-DEFAULT overflow-hidden border border-secondary/20">
+                    <img class="w-full h-full object-cover" alt="Plato de pescado fresco mediterráneo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4sPRkOb5O4weafau8fr5X-EwmaoDunmrX0eU-lWKNbFn3i4_E2dAJE_PBRjifZ-Soqsank2m17bVN7jSjM5Hb-QN-bWlYiVq08fzJQQpFs4cx_hEj33SlWBrVzl5Z1fx4n_d_lHdsO1AhYK00oZQG4FDMaqBfs2sBsSnsbmbXWRgG8D9y6ndHrYxONSERLWsNj-pb0uadd43NOJ7pUcDWamgABsJUC6Dr2jDJkWxy7xXNAvwJtdyxjg">
+                </div>
+                <div class="space-y-6">
+                    <h3 class="font-label-caps text-label-caps text-secondary tracking-widest uppercase">Especialidades</h3>
+                    <h2 class="font-headline-md text-headline-md text-primary">Nuestra Cocina</h2>
+                    <p class="text-on-surface-variant leading-relaxed">
+                        Seleccionamos cuidadosamente los ingredientes más frescos de la lonja y los mercados locales de Cambrils. Nuestra especialidad son los pescados y mariscos, preparados con el respeto y la sencillez que caracteriza a la verdadera gastronomía costera.
+                    </p>
+                    <p class="text-on-surface-variant leading-relaxed">
+                        Cada plato refleja nuestra pasión por el mar y la tierra, combinando sabores tradicionales con una presentación cuidada que invita a disfrutar de una experiencia culinaria inolvidable.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horario Section -->
+        <section class="py-16 bg-surface-container-lowest max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center w-full">
+            <div class="max-w-3xl mx-auto">
+                <h3 class="font-headline-sm text-headline-sm text-secondary tracking-widest uppercase mb-8">Horario de Apertura</h3>
+                <div class="relative bg-surface p-8 md:p-12 rounded-2xl border border-secondary/20 shadow-sm overflow-hidden">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-secondary/5 rounded-full blur-2xl"></div>
+                    <div class="absolute bottom-0 left-0 -mb-4 -ml-4 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>
+                    
+                    <div class="relative z-10 flex flex-col items-center gap-6">
+                        <div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+                            <span class="material-symbols-outlined text-4xl">schedule</span>
+                        </div>
+                        <div class="space-y-2">
+                            <h2 class="font-headline-md text-headline-md text-primary">Abierto Todos los Días</h2>
+                            <div class="h-px w-12 bg-secondary/30 mx-auto my-4"></div>
+                            <p class="font-headline-sm text-headline-sm text-secondary tracking-tight">
+                                07:00 <span class="mx-2 opacity-50">—</span> 00:00
+                            </p>
+                        </div>
+                        <p class="text-on-surface-variant text-sm italic opacity-70">Le esperamos para desayunos, comidas y cenas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiencia Bento Grid -->
+        <section class="py-section-gap bg-surface-container-low border-y border-secondary/10 w-full">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+                <div class="text-center mb-content-gap">
+                    <h3 class="font-label-caps text-label-caps text-secondary tracking-widest uppercase mb-4">La Experiencia Acuari</h3>
+                    <h2 class="font-headline-md text-headline-md text-primary">Para Disfrutar y Compartir</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-surface p-8 rounded-lg border border-secondary/20 hover:border-secondary/50 transition-colors flex flex-col items-center text-center gap-4">
+                        <div class="w-16 h-16 rounded-full bg-primary-container/10 flex items-center justify-center text-primary mb-2">
+                            <span class="material-symbols-outlined text-3xl">restaurant</span>
+                        </div>
+                        <h4 class="font-headline-sm text-headline-sm text-primary">Cocina Mediterránea</h4>
+                        <p class="text-on-surface-variant text-sm">Ingredientes frescos y de proximidad para elaborar recetas que honran nuestra tradición culinaria.</p>
+                    </div>
+                    <div class="bg-surface p-8 rounded-lg border border-secondary/20 hover:border-secondary/50 transition-colors flex flex-col items-center text-center gap-4">
+                        <div class="w-16 h-16 rounded-full bg-primary-container/10 flex items-center justify-center text-primary mb-2">
+                            <span class="material-symbols-outlined text-3xl">fastfood</span>
+                        </div>
+                        <h4 class="font-headline-sm text-headline-sm text-primary">Tapas y Platos</h4>
+                        <p class="text-on-surface-variant text-sm">Una variada selección perfecta para picar algo rápido o disfrutar de una comida completa en compañía.</p>
+                    </div>
+                    <div class="bg-surface p-8 rounded-lg border border-secondary/20 hover:border-secondary/50 transition-colors flex flex-col items-center text-center gap-4">
+                        <div class="w-16 h-16 rounded-full bg-primary-container/10 flex items-center justify-center text-primary mb-2">
+                            <span class="material-symbols-outlined text-3xl">groups</span>
+                        </div>
+                        <h4 class="font-headline-sm text-headline-sm text-primary">Ambiente Cercano</h4>
+                        <p class="text-on-surface-variant text-sm">Un trato familiar y acogedor que te hará sentir como en casa desde el primer momento que cruces la puerta.</p>
+                    </div>
+                    <div class="bg-surface p-8 rounded-lg border border-secondary/20 hover:border-secondary/50 transition-colors flex flex-col items-center text-center gap-4">
+                        <div class="w-16 h-16 rounded-full bg-primary-container/10 flex items-center justify-center text-primary mb-2">
+                            <span class="material-symbols-outlined text-3xl">sunny</span>
+                        </div>
+                        <h4 class="font-headline-sm text-headline-sm text-primary">Terraza</h4>
+                        <p class="text-on-surface-variant text-sm">Relájate al aire libre y disfruta del clima privilegiado de Cambrils mientras saboreas tu bebida favorita.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Preview Section -->
+        <section id="menu" class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full">
+            <div class="text-center mb-content-gap">
+                <h3 class="font-label-caps text-label-caps text-secondary tracking-widest uppercase mb-4">Nuestras Ofertas</h3>
+                <h2 class="font-headline-md text-headline-md text-primary mb-4">Menú del Día</h2>
+                <p class="text-on-surface-variant">Incluye: Agua, Vino y Pan</p>
+            </div>
+
+            <!-- Menu Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Primeros -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6 border-b border-secondary pb-2">
+                        <span class="material-symbols-outlined text-primary text-3xl">soup_kitchen</span>
+                        <h3 class="font-headline-md text-headline-md text-primary">PRIMEROS</h3>
+                    </div>
+                    <ul class="space-y-3 font-body-md text-body-md text-on-surface">
+                        <li>Ensalada Mixta</li>
+                        <li>Espaguetis A La Boloñesa</li>
+                        <li>Gazpacho</li>
+                        <li>Salmorejo</li>
+                        <li>Ensalada De Pasta</li>
+                    </ul>
+                </div>
+
+                <!-- Segundos -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6 border-b border-secondary pb-2">
+                        <span class="material-symbols-outlined text-primary text-3xl">restaurant</span>
+                        <h3 class="font-headline-md text-headline-md text-primary">SEGUNDOS</h3>
+                    </div>
+                    <ul class="space-y-3 font-body-md text-body-md text-on-surface">
+                        <li>Escalopa De Pollo</li>
+                        <li>Parrillada De Carne</li>
+                        <li>Codillo De Cerdo Al Horno</li>
+                        <li>Fritura De Boquerones</li>
+                        <li>Atun A La Plancha</li>
+                    </ul>
+                </div>
+
+                <!-- Postres -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6 border-b border-secondary pb-2">
+                        <span class="material-symbols-outlined text-primary text-3xl">cake</span>
+                        <h3 class="font-headline-md text-headline-md text-primary">POSTRES</h3>
+                    </div>
+                    <ul class="space-y-3 font-body-md text-body-md text-on-surface">
+                        <li>Tarta De La Casa</li>
+                        <li>Helado Variado</li>
+                        <li>Peras Al Vino</li>
+                        <li>Flan</li>
+                        <li>Crema Catalana</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="menu.html" class="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-3 rounded-lg font-label-caps text-label-caps hover:opacity-90 transition-opacity">
+                    VER MENÚ COMPLETO
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Dónde Estamos Section -->
+        <section id="contacto" class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-content-gap">
+                <div class="flex flex-col justify-center space-y-8">
+                    <div>
+                        <h3 class="font-label-caps text-label-caps text-secondary tracking-widest uppercase mb-4">Visítanos</h3>
+                        <h2 class="font-headline-md text-headline-md text-primary">Dónde Estamos</h2>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-secondary mt-1">location_on</span>
+                            <div>
+                                <h4 class="font-label-caps text-label-caps text-primary mb-1">Dirección</h4>
+                                <p class="text-on-surface-variant">Carrer de Lleida, 18<br>43850 Cambrils, Tarragona</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-secondary mt-1">phone</span>
+                            <div>
+                                <h4 class="font-label-caps text-label-caps text-primary mb-1">Teléfono</h4>
+                                <p class="text-on-surface-variant"><a href="tel:+34977795806" class="hover:text-primary transition-colors">977 79 58 06</a></p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-secondary mt-1">schedule</span>
+                            <div>
+                                <h4 class="font-label-caps text-label-caps text-primary mb-1">Horario</h4>
+                                <p class="text-on-surface-variant">Todos los días<br>07:00 – 00:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-[400px] lg:h-auto min-h-[400px] rounded-lg border border-secondary/20 overflow-hidden bg-surface-container">
+                    <iframe allowfullscreen="" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Carrer+de+Lleida,+18,+43850+Cambrils,+Tarragona&t=&z=16&ie=UTF8&iwloc=&output=embed" style="border:0;" title="Mapa de ubicación de Bar Restaurant Acuari" width="100%">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-section-gap px-gutter flex flex-col md:flex-row justify-between gap-content-gap max-w-container-max mx-auto bg-surface-container dark:bg-surface-container border-t border-secondary dark:border-secondary-fixed-dim/10 mt-auto justify-center">
+        <div class="flex flex-col gap-4 items-center w-full">
+            <span class="font-display-lg-mobile md:font-display-lg text-3xl md:text-display-lg text-primary dark:text-primary-fixed text-center">Bar Restaurant Acuari</span>
+            <p class="text-on-surface-variant text-sm text-center">Cambrils, Tarragona | Desde 1990 ofreciendo la mejor gastronomía costera</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            // Mobile menu toggle functionality
+            console.log('Mobile menu toggled');
+        }
+    </script>
+</body>
+</html>

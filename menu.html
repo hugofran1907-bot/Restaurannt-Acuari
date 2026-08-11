@@ -1,0 +1,208 @@
+<!DOCTYPE html><html class="light" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Bar Restaurant Acuari - Menú</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Work+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#426087",
+                        "surface-container-highest": "#e9e1dc",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#87a4cf",
+                        "on-background": "#1e1b18",
+                        "inverse-surface": "#34302c",
+                        "surface-container-low": "#fbf2ed",
+                        "primary-container": "#1a3a5f",
+                        "background": "#fff8f5",
+                        "secondary-fixed-dim": "#d7c3b0",
+                        "secondary-fixed": "#f4dfcb",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#716252",
+                        "on-primary-fixed-variant": "#2a486e",
+                        "on-surface-variant": "#43474e",
+                        "primary": "#002446",
+                        "on-tertiary-container": "#a3a29e",
+                        "surface": "#fff8f5",
+                        "on-secondary-fixed-variant": "#524436",
+                        "surface-container-high": "#efe6e2",
+                        "on-error": "#ffffff",
+                        "secondary": "#6b5c4c",
+                        "tertiary-container": "#393936",
+                        "error": "#ba1a1a",
+                        "surface-container": "#f5ece7",
+                        "on-secondary-fixed": "#241a0e",
+                        "secondary-container": "#f4dfcb",
+                        "outline-variant": "#c3c6cf",
+                        "surface-variant": "#e9e1dc",
+                        "surface-bright": "#fff8f5",
+                        "on-surface": "#1e1b18",
+                        "primary-fixed-dim": "#abc8f5",
+                        "tertiary-fixed": "#e4e2dd",
+                        "primary-fixed": "#d3e3ff",
+                        "inverse-primary": "#abc8f5",
+                        "surface-dim": "#e1d8d4",
+                        "tertiary": "#232421",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#474744",
+                        "on-tertiary-fixed": "#1b1c19",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001c39",
+                        "outline": "#73777f",
+                        "inverse-on-surface": "#f8efea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1120px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "content-gap": "32px",
+                        "margin-mobile": "20px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Work Sans"],
+                        "headline-sm": ["Libre Caslon Text"],
+                        "body-md": ["Work Sans"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "body-lg": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .hairline-border { border-bottom: 1px solid theme('colors.secondary'); }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pt-[80px]">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto left-0 right-0 bg-surface/95 dark:bg-surface/95 backdrop-blur-md border-b border-secondary dark:border-secondary-fixed-dim/20 transition-all">
+<a class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed tracking-tight hover:opacity-80 transition-opacity duration-300" href="index.html">
+            BAR RESTAURANT ACUARI
+        </a>
+<nav class="hidden md:flex gap-6 font-label-caps text-label-caps items-center">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary hover:opacity-80 transition-opacity duration-300" href="index.html">INICIO</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary pb-1 opacity-100 transition-all font-bold" href="menu.html">MENÚ</a>
+</nav>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex-grow max-w-container-max mx-auto w-full px-margin-mobile md:px-gutter py-section-gap">
+<!-- Hero Section -->
+<section class="text-center mb-16">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">MENÚ DEL DÍA</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Incluye: Agua, Vino y Pan
+            </p>
+</section>
+<!-- Menu Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 mb-16">
+<!-- Primeros -->
+<section>
+<div class="flex items-center gap-3 mb-6 hairline-border pb-2 justify-center md:justify-start">
+<span class="material-symbols-outlined text-primary text-3xl">soup_kitchen</span>
+<h2 class="font-headline-md text-headline-md text-primary">PRIMEROS</h2>
+</div>
+<ul class="space-y-4 font-body-md text-body-md text-on-surface">
+<li class="">Ensalada Mixta</li>
+<li class="">Espaguetis A La Boloñesa</li>
+<li class="">Gazpacho</li>
+<li class="">Salmorejo</li>
+<li class="">Ensalada De Pasta</li>
+<li class="">Huevos al plato</li>
+<li class="">Rollitos De Jamón Rellenos De Ensaladilla</li>
+<li class="">Lasaña De Verduras</li>
+<li class="">Ensalada De Tomate Con Queso Y Atún</li>
+<li class="">Melón con jamón</li>
+</ul>
+</section>
+<!-- Segundos -->
+<section>
+<div class="flex items-center gap-3 mb-6 hairline-border pb-2 justify-center md:justify-start">
+<span class="material-symbols-outlined text-primary text-3xl">restaurant</span>
+<h2 class="font-headline-md text-headline-md text-primary">SEGUNDOS</h2>
+</div>
+<ul class="space-y-4 font-body-md text-body-md text-on-surface">
+<li class="">Escalopa De Pollo</li>
+<li class="">Parrillada De Carne</li>
+<li class="">Codillo De Cerdo Al Horno</li>
+<li class="">Bistec a la plancha</li>
+<li class="">Muslo De Pollo Al Horno</li>
+<li class="">Callos</li>
+<li class="">Fritura De Boquerones Y Chipirones</li>
+<li class="">Mixto De: Dorada Y Emperador A La Plancha</li>
+<li class="">Atun A La Plancha</li>
+<li class="">Sardinas a la plancha</li>
+<li class="">Calamares a la andaluza</li>
+</ul>
+</section>
+<!-- Postres -->
+<section>
+<div class="flex items-center gap-3 mb-6 hairline-border pb-2 justify-center md:justify-start">
+<span class="material-symbols-outlined text-primary text-3xl">cake</span>
+<h2 class="font-headline-md text-headline-md text-primary">POSTRES</h2>
+</div>
+<ul class="space-y-4 font-body-md text-body-md text-on-surface">
+<li class="">Tarta De La Casa</li>
+<li class="">Helado Variado</li>
+<li class="">Peras Al Vino</li>
+<li class="">Flan</li>
+<li class="">Macedonia De Frutas</li>
+<li class="">Panna Cotta</li>
+<li class="">Crema Catalana</li>
+<li class="">Piña Con Crema Catalana Quemada</li>
+<li class="">Manzana Al Horno</li>
+</ul>
+</section>
+</div>
+<!-- Otros -->
+<section class="max-w-md mx-auto text-center">
+<div class="flex items-center gap-3 mb-6 hairline-border pb-2 justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">local_bar</span>
+<h2 class="font-headline-md text-headline-md text-primary">OTROS</h2>
+</div>
+<ul class="space-y-4 font-body-md text-body-md text-on-surface">
+<li class="">Gaseosa De ½</li>
+<li class="">Hielo</li>
+</ul>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-gutter flex flex-col md:flex-row justify-between gap-content-gap max-w-container-max mx-auto bg-surface-container dark:bg-surface-container border-t border-secondary dark:border-secondary-fixed-dim/10 mt-auto justify-center">
+<div class="flex flex-col gap-4 items-center">
+<span class="font-display-lg-mobile md:font-display-lg text-3xl md:text-display-lg text-primary dark:text-primary-fixed text-center w-full block">Bar Restaurant Acuari</span>
+
+</div>
+
+</footer>
+
+
+</body></html>
